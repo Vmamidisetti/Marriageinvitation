@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aarav weds Ananya | Auspicious Wedding Celebration</title>
+    <title>Vamsi Reddy weds Kavitha Mishra | Auspicious Wedding Celebration</title>
     
     <!-- Google Fonts for Traditional, Divine and Elegant Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -136,6 +136,41 @@
         @keyframes enterPulse {
             0%, 100% { transform: scale(1); opacity: .82; }
             50% { transform: scale(1.05); opacity: 1; }
+        }
+
+        #entrance-image-screen {
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .cracker-burst {
+            position: absolute;
+            z-index: 0;
+            width: clamp(110px, 18vw, 220px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle, #fff8d6 0 1.5%, transparent 3%),
+                repeating-conic-gradient(from 0deg, transparent 0deg 7deg, var(--burst-color) 7.5deg 8.5deg, transparent 9deg 15deg);
+            mask-image: radial-gradient(circle, #000 0 22%, transparent 72%);
+            opacity: 0;
+            animation: crackerBurst 1.8s ease-out infinite;
+        }
+
+        .cracker-burst-one { top: 8%; left: 4%; --burst-color: #f3c64e; }
+        .cracker-burst-two { top: 12%; right: 5%; --burst-color: #e56a55; animation-delay: .45s; }
+        .cracker-burst-three { bottom: 8%; left: 8%; --burst-color: #f3c64e; animation-delay: .9s; }
+        .cracker-burst-four { right: 7%; bottom: 10%; --burst-color: #df7794; animation-delay: 1.35s; }
+
+        @keyframes crackerBurst {
+            0% { opacity: 0; transform: scale(.08) rotate(0deg); }
+            12% { opacity: .95; }
+            65% { opacity: .65; transform: scale(1) rotate(18deg); }
+            100% { opacity: 0; transform: scale(1.25) rotate(28deg); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cracker-burst { animation: none; opacity: .45; transform: scale(.75); }
         }
 
         .door-open .door-enter-hint {
@@ -1193,7 +1228,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
             <p class="font-serif text-amber-200 text-sm md:text-base tracking-widest mb-3 uppercase">Welcome to the Auspicious Wedding of</p>
             
             <h1 class="font-script text-6xl md:text-8xl text-white mb-4 drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
-                Aarav <span class="text-brand-gold">&</span> Ananya
+                Vamsi Reddy <span class="text-brand-gold">&</span> Kavitha Mishra
             </h1>
 
             <!-- Namaste Hand Icon -->
@@ -1214,6 +1249,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
         </div>
     </div>
 
+    <div id="entrance-image-screen" class="fixed inset-0 z-[10001] hidden bg-black" aria-hidden="true">
+        <div class="cracker-burst cracker-burst-one"></div>
+        <div class="cracker-burst cracker-burst-two"></div>
+        <div class="cracker-burst cracker-burst-three"></div>
+        <div class="cracker-burst cracker-burst-four"></div>
+        <img src="EntranceImg.jpg" alt="Vamsi Reddy and Kavitha Mishra wedding entrance" class="relative z-10 w-full h-full object-contain">
+    </div>
+
     <!-- MAIN WEBSITE CONTENT -->
     <div id="main-website" class="min-h-screen relative hidden">
         
@@ -1221,7 +1264,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
         <nav class="royal-navbar">
     <div class="royal-nav-inner">
         <div class="royal-brand-left">
-            <div class="royal-brand-label">G love G</div>
+            <div class="royal-brand-label">V love K</div>
         </div>
 
         <div class="royal-god-center" aria-label="Divine blessing of Lakshmi and Narayana">
@@ -1231,7 +1274,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                 </div>
 
         <div class="royal-side-menu" aria-label="Location" >
-           <div style="text-align: center; padding: 5px;"> <a href="https://www.google.com/maps/dir/?api=1&destination=The+Heritage+Courtyard,+Jaipur" target="_blank" rel="noopener noreferrer" title="Open Google Maps">
+           <div style="text-align: center; padding: 5px;"> <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Women%27s+Hostel,+SR+Nagar,+Hyderabad" target="_blank" rel="noopener noreferrer" title="Open Google Maps">
              <p>location</p><i class="fa-solid fa-location-dot"></i>
             </a>
             </div>
@@ -1280,9 +1323,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
                     </p>
 
                     <!-- Groom Name -->
-                    <h1 class="font-script text-5xl md:text-7xl text-brand-red mb-1 drop-shadow-sm font-bold">Aarav</h1>
-                    <p class="font-serif text-gray-700 text-xs md:text-sm mb-1 font-semibold">Grandson of Late Smt. Kamla & Late Shri Ramlal Sharma</p>
-                    <p class="font-serif text-brand-gold text-sm md:text-base font-bold mb-4">Son of Mrs. Smita & Mr. Rajesh Sharma</p>
+                    <h1 class="font-script text-5xl md:text-7xl text-brand-red mb-1 drop-shadow-sm font-bold">Vamsi Reddy</h1>
+                    <p class="font-serif text-gray-700 text-xs md:text-sm mb-1 font-semibold">Grandson of Punna Reddy</p>
                     
                     <!-- Wedding Divider -->
                     <div class="my-3 flex items-center justify-center space-x-4 w-full">
@@ -1296,9 +1338,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                     </div>
 
                     <!-- Bride Name -->
-                    <h1 class="font-script text-5xl md:text-7xl text-brand-red mb-1 drop-shadow-sm font-bold">Ananya</h1>
-                    <p class="font-serif text-gray-700 text-xs md:text-sm mb-1 font-semibold">Granddaughter of Smt. Shakuntala & Late Shri Om Prakash Verma</p>
-                    <p class="font-serif text-brand-gold text-sm md:text-base font-bold mb-6">Daughter of Mrs. Kavita & Mr. Anil Verma</p>
+                    <h1 class="font-script text-5xl md:text-7xl text-brand-red mb-6 drop-shadow-sm font-bold">Kavitha Mishra</h1>
 
                     <p class="font-serif text-gray-600 mb-6 uppercase tracking-[0.15em] text-xs font-semibold">
                         We seek your shower of blessings & love<br>as we take our 7 sacred steps (Saptapadi) together.
@@ -1307,7 +1347,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                     <!-- Date Badge -->
                     <div class="inline-flex items-center space-x-3 border-2 border-brand-gold/60 px-6 py-2.5 rounded-full bg-brand-red/5 shadow-inner">
                         <i class="fa-solid fa-calendar-check text-brand-red text-lg"></i>
-                        <p class="font-serif text-brand-red font-extrabold text-sm md:text-base tracking-wide">25th & 26th November, 2026</p>
+                        <p class="font-serif text-brand-red font-extrabold text-sm md:text-base tracking-wide">1st, 2nd & 3rd October, 2026</p>
                     </div>
 
                     <!-- Action Buttons inside Card -->
@@ -1439,7 +1479,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                     <div class="bg-[#FFF8DC] rounded-2xl overflow-hidden shadow-xl border-b-4 border-[#FFC107] transform hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="h-52 relative overflow-hidden group">
-                                <img src="https://www.theknot.com/tk-media/images/b0e84a56-db35-4752-acdd-c8d39c2743cc" alt="Haldi" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <img src="Haldi.jpg" alt="Haldi" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                                 <div class="absolute inset-0 bg-[#FFC107]/20 mix-blend-multiply"></div>
                                 <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
                                     <h3 class="font-serif text-2xl text-white font-bold drop-shadow-md">Haldi & Mehndi</h3>
@@ -1449,14 +1489,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
                                 <div class="absolute -top-6 right-6 w-12 h-12 bg-[#FFC107] rounded-full flex items-center justify-center border-4 border-white shadow-md text-white">
                                     <i class="fa-solid fa-sun text-lg"></i>
                                 </div>
-                                <p class="font-sans text-[#B8860B] font-bold tracking-widest text-xs mb-2">THURSDAY, 25 NOV 2026</p>
+                                <p class="font-sans text-[#B8860B] font-bold tracking-widest text-xs mb-2">THURSDAY, 1 OCT 2026</p>
                                 <p class="text-2xl font-script text-brand-red font-bold mb-3">10:00 AM Onwards</p>
                                 <p class="text-gray-600 text-xs leading-relaxed mb-4">Purifying turmeric ritual followed by intricate henna, folk music, and joyous dancing.</p>
                             </div>
                         </div>
                         <div class="p-6 pt-0">
                             <div class="border-t border-amber-200/80 pt-4 text-center">
-                                <p class="text-xs font-bold uppercase text-gray-800"><i class="fa-solid fa-location-dot text-brand-red mr-2"></i> The Heritage Courtyard, Jaipur</p>
+                                <p class="text-xs font-bold uppercase text-gray-800"><i class="fa-solid fa-location-dot text-brand-red mr-2"></i> Women's Hostel, SR Nagar, Hyderabad</p>
                             </div>
                         </div>
                     </div>
@@ -1465,7 +1505,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                     <div class="bg-[#FFF0F0] rounded-2xl overflow-hidden shadow-xl border-b-4 border-brand-red transform hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="h-52 relative overflow-hidden group">
-                                <img src="https://www.alfaazphotography.com/wp-content/uploads/2019/10/How-to-find-right-Indian-Wedding-Photographer-0028.jpg" alt="Wedding" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <img src="Wedding.jpg" alt="Wedding" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                                 <div class="absolute inset-0 bg-brand-red/20 mix-blend-multiply"></div>
                                 <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
                                     <h3 class="font-serif text-2xl text-white font-bold drop-shadow-md">The Wedding Ceremony</h3>
@@ -1475,14 +1515,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
                                 <div class="absolute -top-6 right-6 w-12 h-12 bg-brand-red rounded-full flex items-center justify-center border-4 border-white shadow-md text-white">
                                     <i class="fa-solid fa-fire text-lg"></i>
                                 </div>
-                                <p class="font-sans text-brand-red font-bold tracking-widest text-xs mb-2">FRIDAY, 26 NOV 2026</p>
-                                <p class="text-2xl font-script text-brand-gold font-bold mb-3">6:00 PM Onwards</p>
+                                <p class="font-sans text-brand-red font-bold tracking-widest text-xs mb-2">FRIDAY, 2 OCT 2026</p>
+                                <p class="text-2xl font-script text-brand-gold font-bold mb-3">6:30 PM Onwards</p>
                                 <p class="text-gray-600 text-xs leading-relaxed mb-4">Joyous Baraat procession, Varmala Exchange, and Sacred Phere around the Agni Mandap.</p>
                             </div>
                         </div>
                         <div class="p-6 pt-0">
                             <div class="border-t border-red-200 pt-4 text-center">
-                                <p class="text-xs font-bold uppercase text-gray-800"><i class="fa-solid fa-location-dot text-brand-red mr-2"></i> Grand Palace Mandap, Jaipur</p>
+                                <p class="text-xs font-bold uppercase text-gray-800"><i class="fa-solid fa-location-dot text-brand-red mr-2"></i> Women's Hostel, SR Nagar, Hyderabad</p>
                             </div>
                         </div>
                     </div>
@@ -1491,7 +1531,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                     <div class="bg-[#F8F9FA] rounded-2xl overflow-hidden shadow-xl border-b-4 border-[#2C3E50] transform hover:-translate-y-2 transition duration-300 flex flex-col justify-between">
                         <div>
                             <div class="h-52 relative overflow-hidden group">
-                                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800&auto=format&fit=crop" alt="Reception" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                                <img src="Reception.jpg" alt="Reception" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
                                 <div class="absolute inset-0 bg-[#2C3E50]/20 mix-blend-multiply"></div>
                                 <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/80 via-black/40 to-transparent p-4">
                                     <h3 class="font-serif text-2xl text-white font-bold drop-shadow-md">Grand Reception</h3>
@@ -1501,14 +1541,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
                                 <div class="absolute -top-6 right-6 w-12 h-12 bg-[#2C3E50] rounded-full flex items-center justify-center border-4 border-white shadow-md text-brand-gold">
                                     <i class="fa-solid fa-glass-cheers text-lg"></i>
                                 </div>
-                                <p class="font-sans text-[#2C3E50] font-bold tracking-widest text-xs mb-2">SATURDAY, 27 NOV 2026</p>
+                                <p class="font-sans text-[#2C3E50] font-bold tracking-widest text-xs mb-2">SATURDAY, 3 OCT 2026</p>
                                 <p class="text-2xl font-script text-[#2C3E50] font-bold mb-3">7:30 PM Onwards</p>
                                 <p class="text-gray-600 text-xs leading-relaxed mb-4">An evening of celebration, music, dinner, and dancing to toast the newly wedded couple.</p>
                             </div>
                         </div>
                         <div class="p-6 pt-0">
                             <div class="border-t border-gray-200 pt-4 text-center">
-                                <p class="text-xs font-bold uppercase text-gray-800"><i class="fa-solid fa-location-dot text-brand-red mr-2"></i> Crystal Ballroom, Jaipur</p>
+                                <p class="text-xs font-bold uppercase text-gray-800"><i class="fa-solid fa-location-dot text-brand-red mr-2"></i> Mallapur, Hyderabad</p>
                             </div>
                         </div>
                     </div>
@@ -1533,7 +1573,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                 <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-8 items-stretch">
                     <div class="rounded-3xl overflow-hidden border border-brand-gold/30 shadow-2xl">
                         <iframe
-                            src="https://www.google.com/maps?q=The+Heritage+Courtyard,+Jaipur&output=embed"
+                            src="https://www.google.com/maps?q=Women%27s+Hostel,+SR+Nagar,+Hyderabad&amp;output=embed"
                             class="w-full h-[320px] md:h-[420px]"
                             style="border:0;"
                             allowfullscreen=""
@@ -1544,16 +1584,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
                     </div>
 
                     <div class="bg-[#fff8e8] rounded-3xl border border-brand-gold/30 shadow-xl p-8 flex flex-col justify-center">
-                        <h3 class="font-serif text-2xl text-brand-red mb-3">The Heritage Courtyard</h3>
+                        <h3 class="font-serif text-2xl text-brand-red mb-3">Women's Hostel</h3>
                         <p class="text-sm text-gray-700 leading-relaxed mb-4">
-                            Join us at Jaipur for a grand celebration filled with sacred rituals, love, and joyous family memories.
+                            Join us at SR Nagar, Hyderabad, for a grand celebration filled with sacred rituals, love, and joyous family memories.
                         </p>
                         <ul class="text-sm text-gray-700 space-y-2 mb-6">
-                            <li><i class="fa-solid fa-map-pin text-brand-red mr-2"></i>Jaipur, Rajasthan, India</li>
+                            <li><i class="fa-solid fa-map-pin text-brand-red mr-2"></i>Women's Hostel, SR Nagar, Hyderabad</li>
                             <li><i class="fa-solid fa-clock text-brand-red mr-2"></i>Arrival from 4:00 PM onward</li>
                             <li><i class="fa-solid fa-car text-brand-red mr-2"></i>Parking and valet available</li>
                         </ul>
-                        <a href="https://www.google.com/maps/dir/?api=1&destination=The+Heritage+Courtyard,+Jaipur" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-brand-red text-white px-5 py-2.5 text-sm font-semibold hover:bg-brand-maroon transition-all">
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Women%27s+Hostel,+SR+Nagar,+Hyderabad" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full bg-brand-red text-white px-5 py-2.5 text-sm font-semibold hover:bg-brand-maroon transition-all">
                             <i class="fa-solid fa-location-arrow mr-2"></i>Open in Google Maps
                         </a>
                     </div>
@@ -1571,7 +1611,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                 
                 <h2 class="font-script text-5xl md:text-6xl text-brand-gold mb-2">Light a Divine Diya</h2>
                 <p class="font-serif text-amber-100 text-xs md:text-sm mb-8 max-w-lg mx-auto">
-                    Offer your prayers & blessings to the almighty and shower good wishes on Aarav & Ananya.
+                    Offer your prayers & blessings to the almighty and shower good wishes on Vamsi Reddy & Kavitha Mishra.
                 </p>
 
                 <!-- Diya Display & Lighting Mechanism -->
@@ -1606,11 +1646,11 @@ button, a { -webkit-tap-highlight-color: transparent; }
                 <div id="blessings-wall" class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto">
                     <!-- Default Initial Blessings -->
                     <div class="bg-white/10 border border-brand-gold/30 p-3.5 rounded-xl">
-                        <p class="text-xs font-bold text-brand-gold font-serif">- Rajesh & Smita Sharma</p>
+                        <p class="text-xs font-bold text-brand-gold font-serif">- A well-wisher</p>
                         <p class="text-xs text-amber-100/90 italic font-sans mt-1">"May Lord Ganesha pave your path with eternal joy and prosperity!"</p>
                     </div>
                     <div class="bg-white/10 border border-brand-gold/30 p-3.5 rounded-xl">
-                        <p class="text-xs font-bold text-brand-gold font-serif">- Anil & Kavita Verma</p>
+                        <p class="text-xs font-bold text-brand-gold font-serif">- A well-wisher</p>
                         <p class="text-xs text-amber-100/90 italic font-sans mt-1">"May Goddess Lakshmi bless your union with love and abundance."</p>
                     </div>
                 </div>
@@ -1627,7 +1667,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
                 </p>
                 <div class="w-24 h-px bg-brand-gold mx-auto mb-6"></div>
                 <p class="text-xs text-amber-200/50 font-sans tracking-widest uppercase">
-                    Designed with Devotion & Love for Aarav & Ananya
+                    Designed with Devotion & Love for Vamsi Reddy & Kavitha Mishra
                 </p>
             </div>
         </footer>
@@ -1760,8 +1800,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
             showerPauseAccumulated = 0;
             showerPausedAt = 0;
 
-            // Spawn a dense opening burst immediately.
-            spawnShowerPetals(42);
+            // Start with a light opening burst.
+            spawnShowerPetals(12);
         }
 
         function spawnShowerPetals(count) {
@@ -1788,7 +1828,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
             const intensity = remaining * remaining * remaining;
 
             if (intensity > 0.008) {
-                const count = Math.max(1, Math.round(16 * intensity));
+                const count = Math.max(1, Math.round(4 * intensity));
                 spawnShowerPetals(count);
             }
         }, 110);
@@ -1805,14 +1845,15 @@ button, a { -webkit-tap-highlight-color: transparent; }
             }
         }
 
-        function stopFlowerShower() {
+        function stopFlowerShower(clearAmbient = false) {
             showerActive = false;
             showerPaused = false;
             showerPauseAccumulated = 0;
             showerPausedAt = 0;
 
-            // Remove active falling petals while leaving the subtle ambient layer.
-            while (petals.length > ambientPetalCount) {
+            // Remove active petals, optionally clearing the ambient layer too.
+            const remainingPetals = clearAmbient ? 0 : ambientPetalCount;
+            while (petals.length > remainingPetals) {
                 petals.pop();
             }
         }
@@ -1837,6 +1878,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
             // Start the 5-second flower shower from the center blessing point.
             try {
                 triggerFlowerShower();
+                setTimeout(() => stopFlowerShower(true), 3000);
             } catch (error) {
                 console.warn('Flower shower could not start:', error);
             }
@@ -1853,6 +1895,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
             // Completely remove the door overlay after the opening animation.
             setTimeout(() => {
+                const entranceImageScreen = document.getElementById('entrance-image-screen');
+                if (entranceImageScreen) {
+                    entranceImageScreen.classList.remove('hidden');
+                    setTimeout(() => entranceImageScreen.classList.add('hidden'), 4000);
+                }
+
                 doorContainer.style.opacity = '0';
                 doorContainer.style.pointerEvents = 'none';
 
@@ -1933,7 +1981,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
             const blessingInput = document.getElementById('guest-blessing');
 
             const name = nameInput.value.trim() || "Kind Guest";
-            const blessing = blessingInput.value.trim() || "Wishing Aarav & Ananya a blissful married life!";
+            const blessing = blessingInput.value.trim() || "Wishing Vamsi Reddy & Kavitha Mishra a blissful married life!";
 
             // Light Diya
             lightDiya();
